@@ -1,0 +1,13 @@
+theming for all
+
+login page validation 
+signup page validation
+forget pass page vaidation
+
+homepage 
+|-> admin page
+|-> client page 
+|-> worker page
+
+Task left
+|->Loader Button

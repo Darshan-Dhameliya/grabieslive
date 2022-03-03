@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@0;1&display=swap");
+
+.passwordfieldeye {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+}
+
+.passwordfieldeye:hover {
+  color: #0d6efd;
+  cursor: pointer;
+}
+
+html,
+body {
+  height: 100%;
+}
+#root {
+  height: 100%;
+}
+/* 
+body {
+  font-family: "Roboto Condensed", sans-serif;
+} */
+
+.border-radius-none {
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+}
+
+.glassy-container {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+input[type="color"] {
+  opacity: 0;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: none;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+}
+
+.color-picker-wrapper {
+  position: relative;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.hover-shadow:hover {
+  cursor: pointer;
+}
+
+.hover-shadow {
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.hover-shadow:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.customscroll {
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  height: 7px;
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: inherit;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+
+.avatarfile {
+  opacity: 0;
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-size: 0;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+/* sidemenu homepage */
+.overlay {
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Sit on top */
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgb(0, 0, 0); /* Black fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/opacity */
+  overflow-x: hidden;
+  overflow-y: hidden; /* Disable horizontal scroll
+  /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay span {
+  padding: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay span:hover,
+.overlay span:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  padding: 8px;
+  text-decoration: none;
+  /* font-size: 36px; */
+  color: #818181;
+  display: block; /* Display block instead of inline */
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+.cardWidth {
+  width: calc((100% / 4) - 16px);
+}
+
+@media (max-width: 991.98px) {
+  .cardWidth {
+    width: 100%;
+  }
+}
+
+.pricetable tr td:nth-child(2) {
+  text-align: end;
+}
+
+.AppointTable te td:nth-child(1) {
+  padding: 2px;
+}

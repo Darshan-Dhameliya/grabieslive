@@ -1,0 +1,931 @@
+{
+    "ELECTRICIAN": [
+      {
+        "heading": "Bokking Only Timezone",
+        "description": [
+          { "serviceName": "1 hour", "serviceDesc": "1 hour", "price": "200" },
+          {
+            "serviceName": "1.5 Hour",
+            "serviceDesc": "1.5 Hour",
+            "price": "320"
+          },
+          {
+            "serviceName": "2.5 Hour",
+            "serviceDesc": "2.5 Hour",
+            "price": "480"
+          },
+          { "serviceName": "3 Hour", "serviceDesc": "3 Hour", "price": "640" },
+          {
+            "serviceName": "3.5 Hours",
+            "serviceDesc": "Rate will be vary respect to time pertaining to specified job",
+            "price": "720"
+          },
+          {
+            "serviceName": "4 Hours",
+            "serviceDesc": "Rate will be vary respect to time pertaining to specified job",
+            "price": "780"
+          },
+          {
+            "serviceName": "4.5 Hours",
+            "serviceDesc": "Rate will be vary respect to time pertaining to specified job",
+            "price": "840"
+          },
+          {
+            "serviceName": "5 Hours",
+            "serviceDesc": "Rate will be vary respect to time pertaining to specified job",
+            "price": "900"
+          }
+        ]
+      },
+      {
+        "heading": "Fan",
+        "description": [
+          {
+            "serviceName": "Fan uninstallation",
+            "serviceDesc": "*Ceiling &wall fan and Exhaust fan.",
+            "price": "70"
+          },
+          {
+            "serviceName": "Fan installation",
+            "serviceDesc": "Includes ceiling, Exhaust(small Domestic)& wall fan",
+            "price": "80"
+          },
+          {
+            "serviceName": "Fan Replacement",
+            "serviceDesc": "*Ceiling,exhaust or wall fan.",
+            "price": "125"
+          },
+          {
+            "serviceName": "Fan repair(speed issue/noise issue)",
+            "serviceDesc": "*Ball bearing charge as per market rate.(299)\n*Coil repair charge as per market rate.(199)",
+            "price": "199"
+          },
+          {
+            "serviceName": "Regulator Replacement(CEILING FAN)",
+            "serviceDesc": "Only ceiling fan",
+            "price": "49"
+          },
+          {
+            "serviceName": "Ceiling fan installation of the event",
+            "serviceDesc": "*fan and light.",
+            "price": "299"
+          }
+        ]
+      },
+      {
+        "heading": "Switch And Socket",
+        "description": [
+          {
+            "serviceName": "Switch/Socket Replacement",
+            "serviceDesc": "Old Switch/Socket to new.",
+            "price": "49"
+          },
+          {
+            "serviceName": "Upto 6 switches (Switchboard)",
+            "serviceDesc": "*includes masonry",
+            "price": "69"
+          },
+          {
+            "serviceName": "AC switch box installation",
+            "serviceDesc": "*Includes masonry charge",
+            "price": "225"
+          },
+          {
+            "serviceName": "Switch board installation(upto 6 switch)",
+            "serviceDesc": "*Including un-installation",
+            "price": "199"
+          }
+        ]
+      },
+      {
+        "heading": "Light",
+        "description": [
+          {
+            "serviceName": "Bulbs/Tubes Replacement (upto 7 bulb)",
+            "serviceDesc": "*Bulb/Tube holder charge extra",
+            "price": "79"
+          },
+          {
+            "serviceName": "Tube light or Bed Lamp",
+            "serviceDesc": "*Rate will be vary /pic\n*Installation/Repair",
+            "price": "49"
+          },
+          {
+            "serviceName": "Wall light and ceiling light",
+            "serviceDesc": "*Installation/Repair",
+            "price": "99"
+          }
+        ]
+      },
+      {
+        "heading": "Chandelier",
+        "description": [
+          {
+            "serviceName": "Chandelier Installation(upto 8 bulbs)",
+            "serviceDesc": "installation",
+            "price": "349"
+          },
+          {
+            "serviceName": "Chandelier Installation(more than 8  bulbs)",
+            "serviceDesc": "installation",
+            "price": "700"
+          }
+        ]
+      },
+      {
+        "heading": "Wiring",
+        "description": [
+          {
+            "serviceName": "Casing wiring(per 7m)",
+            "serviceDesc": "*Excludes masonry work",
+            "price": "149"
+          },
+          {
+            "serviceName": "Concealed wiring.(per 7 m)",
+            "serviceDesc": "*Excludes masonry work",
+            "price": "129"
+          },
+          {
+            "serviceName": "Open wiring(7 m)",
+            "serviceDesc": "Excludes concealed/casing wiring.",
+            "price": "70"
+          }
+        ]
+      },
+      {
+        "heading": "MCB & Fuse",
+        "description": [
+          {
+            "serviceName": "Fuse Replacement",
+            "serviceDesc": "fuse",
+            "price": "70"
+          },
+          {
+            "serviceName": "MCB INSTALLATION(1 pole)",
+            "serviceDesc": "mcb",
+            "price": "59"
+          },
+          {
+            "serviceName": "MCB INSTALLATION(2 pole)",
+            "serviceDesc": "*Material cost extra",
+            "price": "129"
+          },
+          {
+            "serviceName": "MCB INSTALLATION(3 pole)",
+            "serviceDesc": "*Material cost extra",
+            "price": "199"
+          },
+          {
+            "serviceName": "MCB INSTALLATION(4 pole)",
+            "serviceDesc": "*material cost extra",
+            "price": "249"
+          },
+          {
+            "serviceName": "MCB INSTALLATION(5 pole)",
+            "serviceDesc": "*Material cost extra",
+            "price": "299"
+          },
+          {
+            "serviceName": "Sub meter box installation",
+            "serviceDesc": "*only meter box installation\n*wiring charge and other work charge extra.",
+            "price": "199"
+          },
+          {
+            "serviceName": "Change over 3 phase switch installation",
+            "serviceDesc": "*Signal phase to three phase switch",
+            "price": "199"
+          }
+        ]
+      },
+      {
+        "heading": "Room Heater",
+        "description": [
+          {
+            "serviceName": "ROOM HEATER REPAIR",
+            "serviceDesc": "*Including only glass road replacement.\n*Additional charges applicable.\n*other repair part decide to professional.",
+            "price": "199"
+          }
+        ]
+      },
+      {
+        "heading": "Door Bell",
+        "description": [
+          {
+            "serviceName": "Door bell fitting",
+            "serviceDesc": "*Excludes wiring and box set up.\n*excludes installation of video door beil.\n*Including door bell un- installation",
+            "price": "49"
+          }
+        ]
+      },
+      {
+        "heading": "INVERTER & STABILIZER",
+        "description": [
+          {
+            "serviceName": "Signal Battery inverter installation",
+            "serviceDesc": "*wiring cost extra",
+            "price": "349"
+          },
+          {
+            "serviceName": "Double battery inverter installation",
+            "serviceDesc": "*Wiring charge as per rate card.",
+            "price": "399"
+          },
+          {
+            "serviceName": "Inverter servicing",
+            "serviceDesc": "*only servicing",
+            "price": "149"
+          },
+          {
+            "serviceName": "Inverter fuse Repair",
+            "serviceDesc": "*only fuse,Extra work charge apply.",
+            "price": "70"
+          }
+        ]
+      },
+      {
+        "heading": "TV & GEYSER (Installation&un-installation)",
+        "description": [
+          {
+            "serviceName": "TV installation(upto 48 inches)",
+            "serviceDesc": "*Above 48 inches cost extra.",
+            "price": "249"
+          },
+          {
+            "serviceName": "TV installation(Above 48 inches)",
+            "serviceDesc": "tv installation",
+            "price": "399"
+          },
+          {
+            "serviceName": "TV UN- installation",
+            "serviceDesc": "uninstallation",
+            "price": "99"
+          },
+          {
+            "serviceName": "Home Theater installation",
+            "serviceDesc": "*Open wiring from TV to speakers.",
+            "price": "199"
+          },
+          {
+            "serviceName": "Stabilizer installation & Repair.",
+            "serviceDesc": "Including uninstallation.",
+            "price": "119"
+          },
+          {
+            "serviceName": "Geyser Installation",
+            "serviceDesc": "No repair.",
+            "price": "299"
+          },
+          {
+            "serviceName": "Geyser uninstallation",
+            "serviceDesc": "No repair",
+            "price": "299"
+          }
+        ]
+      }
+    ],
+    "PLUMBER": [
+      {
+        "heading": "Mainor Issue",
+        "description": [
+          {
+            "serviceName": "Connection pipe",
+            "serviceDesc": "Fitting / Replacement",
+            "price": 90
+          },
+          {
+            "serviceName": "Drain cover",
+            "serviceDesc": "Plumber Service",
+            "price": 90
+          }
+        ]
+      },
+      {
+        "heading": "Bath Fitting",
+        "description": [
+          {
+            "serviceName": "Bath Fitting Installation",
+            "serviceDesc": "Any one of top / holder",
+            "price": "78"
+          },
+          {
+            "serviceName": "Shower Installation Ceilling Mounted",
+            "serviceDesc": "PLUMBING SERVICE",
+            "price": "141"
+          },
+          {
+            "serviceName": "Shower Installation Wall Mounted",
+            "serviceDesc": "plumbing service",
+            "price": "109"
+          }
+        ]
+      },
+      {
+        "heading": "Basin & SINK",
+        "description": [
+          {
+            "serviceName": "Wash Basin & Sink Installation",
+            "serviceDesc": "Plumbing service",
+            "price": "350"
+          },
+          {
+            "serviceName": "Wash basin Repair",
+            "serviceDesc": "plumbing service",
+            "price": "150"
+          },
+          {
+            "serviceName": "Waste pipe",
+            "serviceDesc": "Installation / leakage repair",
+            "price": "90"
+          }
+        ]
+      },
+      {
+        "heading": "Blockage",
+        "description": [
+          
+          {
+            "serviceName": "Drainage Pipe(overground)",
+            "serviceDesc": "Includes basin,sink,external pipes\nmainline blockage as per quotation by technician",
+            "price": "140"
+          },
+          {
+            "serviceName": "Drainage Pipe(Underground)",
+            "serviceDesc": "Includes concealed washbasin pipe.\nMainline blockage as per quotation.",
+            "price": "329"
+          },
+          {
+            "serviceName": "Toilet Pot",
+            "serviceDesc": "Mainline blockage as per quotation.",
+            "price": "1100"
+          }
+        ]
+      },
+      {
+        "heading": "Tap & Mixer",
+        "description": [
+          {
+            "serviceName": "Hot & cold water mixer repair / service",
+            "serviceDesc": "leakage repair.\nFaulty diverter.",
+            "price": "230"
+          },
+          {
+            "serviceName": "Hot & cold water mixer installation",
+            "serviceDesc": "Get fastest installation Hot & cold water mixer.",
+            "price": "350"
+          },
+          {
+            "serviceName": "Tap Repair",
+            "serviceDesc": "Leakage in tap.\nSpare parts cost will be extra.",
+            "price": "50"
+          },
+          {
+            "serviceName": "Tap installation",
+            "serviceDesc": "Installation of tap to dummy pipe",
+            "price": "50"
+          },
+          {
+            "serviceName": "Tap Replacement",
+            "serviceDesc": "Changing the old tap to the new tap.",
+            "price": "70"
+          },
+          {
+            "serviceName": "Nozzle (water saving)",
+            "serviceDesc": "Prevent water from being wasted.",
+            "price": "99"
+          }
+        ]
+      },
+      {
+        "heading": "Toilet",
+        "description": [
+          {
+            "serviceName": "Flush tank repair(Inside the wall)",
+            "serviceDesc": "*Flush not working.\n*Water not filling in flush tank.\n*leakage repair.\n*spare parts cost will be extra.",
+            "price": "225"
+          },
+          {
+            "serviceName": "Flush tank repair(Off the wall)",
+            "serviceDesc": "*Flush not working. *Water not filling in flush tank. *leakage repair. *spare parts cost will be extra.",
+            "price": "100"
+          },
+          {
+            "serviceName": "Flush tank replacement",
+            "serviceDesc": "Spare parts cost will be extra.",
+            "price": "400"
+          },
+          {
+            "serviceName": "Toilet set cover replacement",
+            "serviceDesc": "Spare parts cost will be extra.",
+            "price": "80"
+          },
+          {
+            "serviceName": "Installation/Repair( WATER JET SPARY)",
+            "serviceDesc": "Spare parts cost will be extra.",
+            "price": "99"
+          },
+          {
+            "serviceName": "Indian Toilet Installation",
+            "serviceDesc": "Spare parts cost will be extra.",
+            "price": "1500"
+          },
+          {
+            "serviceName": "Western Toilet Installation ( Floor mounted )",
+            "serviceDesc": "Spare parts cost will be extra.",
+            "price": "1349"
+          },
+          {
+            "serviceName": "Western Toilet Repair ( Floor mounted )",
+            "serviceDesc": "Spare parts cost will be extra.",
+            "price": "599"
+          },
+          {
+            "serviceName": "Western Toilet Installation ( Wall mounted )",
+            "serviceDesc": "Spare parts cost will be extra.",
+            "price": "1599"
+          },
+          {
+            "serviceName": "Western Toilet Replacement ( Floor mounted )",
+            "serviceDesc": "Spare parts cost will be extra.",
+            "price": "1549"
+          },
+          {
+            "serviceName": "Western Toilet Replacement ( Wall mounted )",
+            "serviceDesc": "Spare parts cost will be extra.",
+            "price": "1699"
+          }
+        ]
+      },
+      {
+        "heading": "Water Tank",
+        "description": [
+          {
+            "serviceName": "Overhead tank installation(upto 500 litter)",
+            "serviceDesc": "Plumber service",
+            "price": "449"
+          },
+          {
+            "serviceName": "Overhead tank installation(upto 500 - 2000 litter)",
+            "serviceDesc": "Plumber service",
+            "price": "999"
+          },
+          {
+            "serviceName": "Overhead tank overflow",
+            "serviceDesc": "Includes water level(ball valve) controller replacement",
+            "price": "139"
+          },
+          {
+            "serviceName": "Overhead tank leakage",
+            "serviceDesc": "plumber service",
+            "price": "199"
+          },
+          {
+            "serviceName": "Overhead tank cleaning(upto 500 litter)",
+            "serviceDesc": "Plumber service",
+            "price": "499"
+          },
+          {
+            "serviceName": "Overhead tank cleaning(upto 500 - 1000 litter)",
+            "serviceDesc": "Plumber service",
+            "price": "599"
+          },
+          {
+            "serviceName": "Overhead tank cleaning(upto 1000 - 2000 litter)",
+            "serviceDesc": "Plumber service",
+            "price": "899"
+          },
+          {
+            "serviceName": "Underground tank cleaning(1000 litter -2000 litter)",
+            "serviceDesc": "Plumber service",
+            "price": "1199"
+          },
+          {
+            "serviceName": "Underground tank cleaning(2000 litter-3000 litter)",
+            "serviceDesc": "Plumber service",
+            "price": "1599"
+          },
+          {
+            "serviceName": "Water meter installation",
+            "serviceDesc": "Plumber service",
+            "price": "299"
+          }
+        ]
+      },
+      {
+        "heading": "Motor",
+        "description": [
+          {
+            "serviceName": "Motor Repair",
+            "serviceDesc": "Only air cavity removal\nOther repairing depend on the market price",
+            "price": "90"
+          },
+          {
+            "serviceName": "Motor Installation",
+            "serviceDesc": "Plumber Service",
+            "price": "349"
+          }
+        ]
+      }
+    ],
+    "AC SERVICE & REPAIR": [
+      {
+        "heading": "Ac Service",
+        "description": [
+          {
+            "serviceName": "Windows Ac Service [POWER JET PUMP]",
+            "serviceDesc": "*Spare part rates applicable as per rate card.\n*High quality spare parts.\n*Spare parts cost based on UL rate card.\n*Power jet AC servicing",
+            "price": "499"
+          },
+          {
+            "serviceName": "Split Ac Service[POWER JET PUMP ]",
+            "serviceDesc": "*Mess free service.\n*Faster cooling guaranteed.\n*Power jet Technology.\n*Expert technicians.",
+            "price": "599"
+          }
+        ]
+      },
+      {
+        "heading": "Ac Repair",
+        "description": [
+          {
+            "serviceName": "Window Ac Repair",
+            "serviceDesc": "*Spare part rates applicable as per rate card.\n*High quality spare parts.\n*Spare parts cost based on UL rate card.",
+            "price": "251"
+          },
+          {
+            "serviceName": "Split Ac Repair",
+            "serviceDesc": "Using jet pump in every service.\nSpare part rates applicable as per rate card.",
+            "price": "249"
+          }
+        ]
+      },
+      {
+        "heading": "AC Installation/ Un-installation",
+        "description": [
+          {
+            "serviceName": "Window Ac Installation",
+            "serviceDesc": "Window Ac Installation",
+            "price": "999"
+          },
+          {
+            "serviceName": "Window Ac Un-Installation",
+            "serviceDesc": "Window Ac Un-Installation",
+            "price": "400"
+          },
+          {
+            "serviceName": "Split Ac Un-Installation",
+            "serviceDesc": "Split Ac Un-Installation",
+            "price": "499"
+          },
+          {
+            "serviceName": "Split Ac Installation",
+            "serviceDesc": "Split Ac Installation",
+            "price": "1499"
+          }
+        ]
+      },
+      {
+        "heading": "Split AC Reinstallation",
+        "description": [
+          {
+            "serviceName": "Indoor Re-Installation",
+            "serviceDesc": "Indoor Re-Installation at the same address.",
+            "price": "700"
+          },
+          {
+            "serviceName": "Outdoor Re-Installation",
+            "serviceDesc": "Outdoor Re-Installation at the same address.",
+            "price": "700"
+          }
+        ]
+      }
+    ],
+    "RO SERVICE & REPAIR": [
+      {
+        "heading": "RO-Installation",
+        "description": [
+          {
+            "serviceName": "RO- Installation",
+            "serviceDesc": "Get fastest installation of your appliance.\nSpare parts and accessories charge cost extra.",
+            "price": "349"
+          },
+          {
+            "serviceName": "RO - installation + un-installation",
+            "serviceDesc": "Install and Un-install to be carried out within the same area.",
+            "price": "500"
+          }
+        ]
+      },
+      {
+        "heading": "RO-Repair / Servicing",
+        "description": [
+          {
+            "serviceName": "Repair",
+            "serviceDesc": "Spare parts cost will be extra.\nvisiting charge will be applicable on inspection time.",
+            "price": "251"
+          },
+          {
+            "serviceName": "servicing/change filter",
+            "serviceDesc": "Filter change cost will be extra.\ncleaning of RO and all filter parts.",
+            "price": "280"
+          }
+        ]
+      },
+      {
+        "heading": "RO-Uninstallation",
+        "description": [
+          {
+            "serviceName": "RO- Uninstallation",
+            "serviceDesc": "Get fastest Un-installation of your RO appliance.",
+            "price": "249"
+          }
+        ]
+      }
+    ],
+    "CARPENTER": [
+      {
+        "heading": "BOOKING FOR TIMING.",
+        "description": [
+          {
+            "serviceName": "1 Hours",
+            "serviceDesc": "Rate will be vary respect to time pertaining to specified job.",
+            "price": "250"
+          },
+          {
+            "serviceName": "1.5 Hours",
+            "serviceDesc": "Rate will be vary respect to time pertaining to specified job.",
+            "price": "390"
+          },
+          {
+            "serviceName": "2 Hours",
+            "serviceDesc": "Rate will be vary respect to time  pertaining to  specified job.",
+            "price": "480"
+          },
+          {
+            "serviceName": "2.5 Hours",
+            "serviceDesc": "Rate will be vary respect to time pertaining to specified job.",
+            "price": "590"
+          },
+          {
+            "serviceName": "3 Hours",
+            "serviceDesc": "Rate will be vary respect to time pertaining to specified job.",
+            "price": "690"
+          },
+          {
+            "serviceName": "3.5 Hours",
+            "serviceDesc": "Rate will be vary respect to time pertaining to specified job.",
+            "price": "790"
+          },
+          {
+            "serviceName": "4 Hours",
+            "serviceDesc": "Rate will be vary respect to time pertaining to specified job.",
+            "price": "890"
+          },
+          {
+            "serviceName": "4.5 Hours",
+            "serviceDesc": "Rate will be vary respect to time pertaining to specified job.",
+            "price": "980"
+          },
+          {
+            "serviceName": "5 Hours",
+            "serviceDesc": "Rate will be vary respect to time pertaining to specified job.",
+            "price": "1070"
+          }
+        ]
+      },
+      {
+        "heading": "BED",
+        "description": [
+          {
+            "serviceName": "Support Repair",
+            "serviceDesc": "Bed support repair",
+            "price": "349"
+          },
+          {
+            "serviceName": "Bed legs/ Hang Repair",
+            "serviceDesc": "Includes  repair of either leg or headboard.",
+            "price": "149"
+          }
+        ]
+      },
+      {
+        "heading": "DRILL & HANG",
+        "description": [
+          {
+            "serviceName": "Mirror installation(upto 8ft/5ft)",
+            "serviceDesc": "mirror installation",
+            "price": "79"
+          },
+          {
+            "serviceName": "Clamps type shelf installation",
+            "serviceDesc": "*Wooden/glass shelf installation using clamps",
+            "price": "99"
+          },
+          {
+            "serviceName": "Drill & Hang(upto 4 )",
+            "serviceDesc": "*Drilling 4 nails.\n*Applicable will not be a heavy task.\n*Includes hanging any one of painting, clock or photo frame.",
+            "price": "49"
+          },
+          {
+            "serviceName": "Bath fitting installation",
+            "serviceDesc": "*Toilet paper holder.\n*Soap holder.\n*Towel hanger.",
+            "price": "49"
+          }
+        ]
+      },
+      {
+        "heading": "WINDOW & CURTAIN",
+        "description": [
+          {
+            "serviceName": "Curtain road installation",
+            "serviceDesc": "*Includes measurement curtain blinds.",
+            "price": "149"
+          },
+          {
+            "serviceName": "Motorized blinds fitting.",
+            "serviceDesc": "*Motorized blinds fitting.",
+            "price": "249"
+          },
+          {
+            "serviceName": "Non motorized blinds fitting",
+            "serviceDesc": "*Non motorized blinds fitting",
+            "price": "149"
+          },
+          {
+            "serviceName": "Window AC frame",
+            "serviceDesc": "*only wooden frame",
+            "price": "299"
+          },
+          {
+            "serviceName": "Window frame removed(After the ac is out)",
+            "serviceDesc": "*wooden panel installation on window",
+            "price": "119"
+          },
+          {
+            "serviceName": "Window hinge installation(upto 4 one window)",
+            "serviceDesc": "*Applicable one window",
+            "price": "149"
+          }
+        ]
+      },
+      {
+        "heading": "FURNITURE REPAIR",
+        "description": [
+          {
+            "serviceName": "Furniture leg cap installation.(upto 4 cap)",
+            "serviceDesc": "*material cost extra",
+            "price": "99"
+          }
+        ]
+      },
+      {
+        "heading": "FURNITURE ASSEMBLY",
+        "description": [
+          {
+            "serviceName": "Table / chair fitting",
+            "serviceDesc": "*including wheels chair.\n*including fitting up to 4 wheels.",
+            "price": "99"
+          }
+        ]
+      },
+      {
+        "heading": "DOOR FITTING",
+        "description": [
+          {
+            "serviceName": "DRILL & HANG(upto 4 )",
+            "serviceDesc": "*Drilling 4 nails.\n*Applicable will not be a heavy task.\n*Includes hanging any one of painting,clock or photofram.",
+            "price": "49"
+          },
+          {
+            "serviceName": "Sliding door repair",
+            "serviceDesc": "*Only Sliding door repair",
+            "price": "299"
+          },
+          {
+            "serviceName": "Surface Mounted Door Closer Installation",
+            "serviceDesc": ".material cost extra",
+            "price": "399"
+          },
+          {
+            "serviceName": "Door closer installation(Overhead)",
+            "serviceDesc": "*material cost extra",
+            "price": "199"
+          },
+          {
+            "serviceName": "Mesh & Grill Replacement",
+            "serviceDesc": "*Excludes metallic/aluminium door",
+            "price": "199"
+          },
+          {
+            "serviceName": "Mesh grill door installation",
+            "serviceDesc": "*Excludes metallic / aluminium door installation.",
+            "price": "349"
+          },
+          {
+            "serviceName": "Door lock installation",
+            "serviceDesc": "*Includes creating cavity and installing lock.",
+            "price": "399"
+          },
+          {
+            "serviceName": "Door lock replacement",
+            "serviceDesc": "*Fitting new lock",
+            "price": "349"
+          },
+          {
+            "serviceName": "Door lock repair",
+            "serviceDesc": "*material cost extra.",
+            "price": "149"
+          },
+          {
+            "serviceName": "Hing installation(4 nos ) Including door dismantling",
+            "serviceDesc": "*Only one door applicable",
+            "price": "249"
+          },
+          {
+            "serviceName": "Door installation",
+            "serviceDesc": "*For wooden doors only.\n*Includes hinge installation.",
+            "price": "649"
+          },
+          {
+            "serviceName": "Door repair",
+            "serviceDesc": "*Excludes main door.\n*Wood scraping.\n*Door alignment and minor fixing.",
+            "price": "99"
+          },
+          {
+            "serviceName": "Accessory installation/uninstallation",
+            "serviceDesc": "*Any one of latch,chain,stopper.",
+            "price": "59"
+          }
+        ]
+      },
+      {
+        "heading": "BALCONY",
+        "description": [
+      
+          {
+            "serviceName": "Net installation(4ft/10ft)",
+            "serviceDesc": "*ware and pigeon net including\n*for every additional 10 sq.ft rs 59 extra.",
+            "price": "249"
+          },
+          {
+            "serviceName": "Clothes ceiling hanger installation",
+            "serviceDesc": "*material  cost extra",
+            "price": "349"
+          },
+          {
+            "serviceName": "Clothes wall hanger installation",
+            "serviceDesc": "*material cost extra",
+            "price": "149"
+          }
+        ]
+      },
+      {
+        "heading": "CUPBOARD & DRAWER",
+        "description": [
+          {
+            "serviceName": "Cupboard hinge installation (3 nos)",
+            "serviceDesc": "*installation/uninstallation,reapair",
+            "price": "99"
+          },
+          {
+            "serviceName": "Channel repair",
+            "serviceDesc": "*material cost extra",
+            "price": "79"
+          },
+          {
+            "serviceName": "channel replacement",
+            "serviceDesc": "*Materiel cost extra",
+            "price": "149"
+          },
+          {
+            "serviceName": "Handle replacement",
+            "serviceDesc": "*Material cost extra",
+            "price": "49"
+          },
+          {
+            "serviceName": "Sliding door repair",
+            "serviceDesc": "*material cost extra.",
+            "price": "299"
+          },
+          {
+            "serviceName": "Lock repair",
+            "serviceDesc": "*materiel cost extra",
+            "price": "149"
+          },
+          {
+            "serviceName": "Lock replacement",
+            "serviceDesc": "*Material cost extra",
+            "price": "79"
+          },
+          {
+            "serviceName": "Shelf installation",
+            "serviceDesc": "*wooden/glass shelf installation",
+            "price": "99"
+          },
+          {
+            "serviceName": "Lock installation",
+            "serviceDesc": "*material cost extra",
+            "price": "349"
+          }
+        ]
+      }
+    ]
+  }
