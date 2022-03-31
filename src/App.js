@@ -25,6 +25,19 @@ function App() {
   const theme = useMemo(
     () =>
       createTheme({
+        components: {
+          MuiTableRow: {
+            styleOverrides: {
+              root: {
+                td: {
+                  borderBottom: 0,
+                  whiteSpace: "pre-line",
+                },
+              },
+            },
+          },
+        },
+
         typography: {
           button: {
             textTransform: "none",
@@ -49,7 +62,7 @@ function App() {
     () =>
       (document.body.style.backgroundColor = state.darkMode
         ? "#0D1117"
-        : "#F5F5F5"),
+        : "#ddd"),
     [state.darkMode]
   );
 

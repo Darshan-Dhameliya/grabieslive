@@ -48,9 +48,8 @@ export default function EmpSignup() {
       spec: values.profession,
       password: values.password,
     };
-    console.log(empObj);
     await axios
-      .post("http://localhost:8000/emp/register", empObj)
+      .post("https://grabieslive.herokuapp.com/emp/register", empObj)
       .then((res) => {
         if (res.data.status) {
           toast.success(res.data.message);
@@ -64,8 +63,6 @@ export default function EmpSignup() {
         console.log(e);
       });
     setisLoading(false);
-
-    console.log(values);
   };
 
   const LoginSchema = Yup.object().shape({

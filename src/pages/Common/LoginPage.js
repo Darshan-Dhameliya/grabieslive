@@ -33,7 +33,7 @@ export default function LoginPage() {
   const LoginData = async (values, { resetForm }) => {
     setisLoading(true);
     await axios
-      .post("http://localhost:8000/login", {
+      .post("https://grabieslive.herokuapp.com/login", {
         email: values.email,
         password: values.password,
       })
@@ -41,11 +41,13 @@ export default function LoginPage() {
         if (res.data.status) {
           AuthDispatch({
             type: "isLoggedIn",
-            userType: "user",
+            userType: res.data.userType ? "admin" : "user",
             userData: res.data.Data,
           });
+          console.log(res.data);
           toast.success(res.data.message);
-          Navigate("/client/homepage");
+          if (res.data.userType) Navigate("/admin/homepage");
+          else Navigate("/client/homepage");
           resetForm();
         } else {
           toast.error(res.data.message);

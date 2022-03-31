@@ -12,6 +12,7 @@ import Button from "@mui/material/Button";
 import ServiceListData from "./ServiceList.json";
 import { UserContext } from "../../provider/UserContext";
 import { useParams, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -51,17 +52,27 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 
 export default function ServiceList() {
   const [expanded, setExpanded] = React.useState(-1);
-  const { AuthDispatch } = useContext(UserContext);
+  const {
+    AuthDispatch,
+    AuthState: { cartData, isLoggedIn },
+  } = useContext(UserContext);
   const [serviceData, setserviceData] = useState([]);
   const { servicename } = useParams();
   const Navigate = useNavigate();
+
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
 
-  const AddItemInCart = (item) => {
-    const itemWithTitle = { ...item, jobtitle: servicename };
-    AuthDispatch({ type: "addItemCart", item: itemWithTitle });
+  const ChekoutVefiedAddItemInCart = (item) => {
+    if (isLoggedIn) {
+      const itemWithTitle = { ...item, jobtitle: servicename };
+      AuthDispatch({ type: "addItemCart", item: itemWithTitle });
+      Navigate("/client/homepage/cart/fillform");
+    } else {
+      toast.warn("First You Have To login");
+      Navigate("/login");
+    }
   };
 
   useEffect(() => {
@@ -74,7 +85,7 @@ export default function ServiceList() {
   }, []);
 
   return (
-    <div className="container my-2">
+    <div className="container py-3 pb-4">
       <Typography
         gutterBottom
         color="textPrimary"
@@ -96,7 +107,11 @@ export default function ServiceList() {
           <AccordionDetails>
             <div className="d-flex flex-wrap ">
               {item.description?.map((subitem, subindex) => (
-                <Card className="m-2 cardWidth " key={subindex}>
+                <Card
+                  className="m-2 cardWidth "
+                  key={subindex}
+                  style={{ height: "fit-content" }}
+                >
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       {subitem.serviceName}
@@ -114,9 +129,9 @@ export default function ServiceList() {
                     <Button
                       size="small"
                       variant="contained"
-                      onClick={() => AddItemInCart(subitem)}
+                      onClick={() => ChekoutVefiedAddItemInCart(subitem)}
                     >
-                      Add To cart
+                      Book Service
                     </Button>
                   </CardActions>
                 </Card>

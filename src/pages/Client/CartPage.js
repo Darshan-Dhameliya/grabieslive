@@ -26,7 +26,6 @@ export default function CartPage() {
   };
 
   const ChekoutVefied = () => {
-    localStorage.setItem("cartItemData", JSON.stringify(cartData));
     if (isLoggedIn) {
       Navigate("/client/homepage/cart/fillform");
     } else {

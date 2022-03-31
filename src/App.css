@@ -187,9 +187,21 @@ input[type="number"] {
   width: calc((100% / 4) - 16px);
 }
 
+.logo {
+  background-image: url("./images/logo.png");
+  height: 55px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 240px;
+}
+
 @media (max-width: 991.98px) {
   .cardWidth {
     width: 100%;
+  }
+  .logo {
+    background-image: url("./images/logo-android.png");
+    width: 63px;
   }
 }
 

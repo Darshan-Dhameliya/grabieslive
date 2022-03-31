@@ -36,9 +36,8 @@ export default function EmpPassAuth(props) {
       c_otp: values.otp,
       new_pass: values.password,
     };
-    console.log(data);
     await axios
-      .post("http://localhost:8000/emp/forgetpass", data)
+      .post("https://grabieslive.herokuapp.com/emp/forgetpass", data)
       .then((res) => {
         if (res.data.status) {
           toast.success(res.data.message);

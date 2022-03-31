@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
@@ -7,12 +7,14 @@ import Button from "@mui/material/Button";
 import PersonInfo from "./StepperForm/FirstStep";
 import BillPage from "./StepperForm/SecondStep";
 import ThirdStep from "./StepperForm/ThirdStep";
+import { useNavigate } from "react-router-dom";
 
 const steps = ["title 1", "title 2", "title 3"];
 
 export default function HorizontalLinearStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [appoimentData, setappoimentData] = useState({});
+  const Navigate = useNavigate();
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -21,6 +23,13 @@ export default function HorizontalLinearStepper() {
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+
+  useEffect(() => {
+    const cartData = JSON.parse(localStorage.getItem("cartItemData"));
+    if (cartData.length === 0) {
+      Navigate("/client/homepage");
+    }
+  }, []);
 
   return (
     <div className="mt-3">

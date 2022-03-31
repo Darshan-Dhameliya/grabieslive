@@ -9,6 +9,8 @@ import Stepper from "../pages/Client/Stepper";
 import ServiceList from "../pages/Client/ServiceList";
 import Cienthomepage from "../pages/Client/Cienthomepage";
 import LoginPage from "../pages/Common/LoginPage";
+import BookedService from "../pages/Client/BookedService";
+import CompletedServide from "../pages/Client/CompletedServide";
 
 export const ClientRoute = () => {
   return (
@@ -22,6 +24,27 @@ export const ClientRoute = () => {
           </>
         }
       />
+
+      <Route
+        path="/client/bookedservice"
+        element={
+          <>
+            <Navbar />
+            <BookedService />
+          </>
+        }
+      />
+
+      <Route
+        path="/client/completedservice"
+        element={
+          <>
+            <Navbar />
+            <CompletedServide />
+          </>
+        }
+      />
+
       <Route
         path="client/ChangePassword"
         element={
@@ -42,7 +65,7 @@ export const ClientRoute = () => {
           </>
         }
       />
-      <Route
+      {/* <Route
         path="client/homepage/cart"
         element={
           <>
@@ -50,7 +73,7 @@ export const ClientRoute = () => {
             <CartPage />
           </>
         }
-      />
+      /> */}
       <Route
         path="/login"
         element={

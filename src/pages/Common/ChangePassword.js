@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 // import { makeStyles } from "@mui/material/styles";
 import {
   TextField,
@@ -19,14 +19,48 @@ import { useTheme } from "@mui/styles";
 import CustomButton from "../../component/CustomButton";
 import { DisableAOS } from "../../provider/DisableAmination";
 import { useEffect } from "react";
+import { UserContext } from "../../provider/UserContext";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 export default function PassAuth() {
-  let Navigate = useNavigate();
   const theme = useTheme();
+  const [isLoading, setisLoading] = useState(false);
 
+  const {
+    AuthState: { userData, userType },
+  } = useContext(UserContext);
   const [showPass, setShowpass] = useState(false);
-  const LoginData = (values) => {
-    console.log(values);
+
+  const LoginData = async (values, { resetForm }) => {
+    setisLoading(true);
+    var url = "";
+    if (userType === "user") {
+      url = "https://grabieslive.herokuapp.com/user/changepass";
+    } else if (userType === "emp") {
+      url = "https://grabieslive.herokuapp.com/emp/changepass";
+    } else {
+      url = "https://grabieslive.herokuapp.com/admin/changepass";
+    }
+    await axios
+      .post(url, {
+        id: userData._id,
+        email: userData.email,
+        old_pass: values.o_password,
+        new_pass: values.c_password,
+      })
+      .then((res) => {
+        if (res.data.status) {
+          toast.success(res.data.message);
+          resetForm();
+        } else {
+          toast.error(res.data.message);
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+    setisLoading(false);
   };
 
   const LoginSchema = Yup.object().shape({
@@ -70,11 +104,12 @@ export default function PassAuth() {
             <Paper className="p-5 shadow glassy-container">
               <h1 className="text-center">Change Password</h1>
               <Formik
+                enableReinitialize
                 initialValues={{ o_password: "", password: "", c_password: "" }}
                 onSubmit={LoginData}
                 validationSchema={LoginSchema}
               >
-                {({ errors, touched, handleChange }) => (
+                {({ errors, touched, handleChange, values }) => (
                   <Form autoComplete="off">
                     <div className="form-group mt-3 ">
                       <TextField
@@ -84,6 +119,7 @@ export default function PassAuth() {
                         name="o_password"
                         variant="outlined"
                         type="text"
+                        value={values.o_password}
                         onChange={handleChange}
                         className="w-100"
                       />
@@ -99,6 +135,7 @@ export default function PassAuth() {
                         name="password"
                         variant="outlined"
                         className="w-100"
+                        value={values.password}
                         placeholder="Enter Your Password"
                         onChange={handleChange}
                         InputProps={{
@@ -132,6 +169,7 @@ export default function PassAuth() {
                         type={showPass ? "text" : "password"}
                         name="c_password"
                         variant="outlined"
+                        value={values.c_password}
                         className="w-100"
                         placeholder="Enter Your confirm password"
                         onChange={handleChange}
@@ -160,7 +198,10 @@ export default function PassAuth() {
                     </div>
 
                     <div className="form-group text-center mt-3">
-                      <CustomButton label="Change Password" />
+                      <CustomButton
+                        label="Change Password"
+                        isLoading={isLoading}
+                      />
                     </div>
                   </Form>
                 )}

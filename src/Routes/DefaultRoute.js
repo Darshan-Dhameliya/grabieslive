@@ -24,7 +24,7 @@ export const DefaultRoute = () => {
           </>
         }
       />
-      <Route
+      {/* <Route
         path="client/homepage/cart"
         element={
           <>
@@ -32,7 +32,7 @@ export const DefaultRoute = () => {
             <CartPage />
           </>
         }
-      />
+      /> */}
       <Route
         path="/login"
         element={

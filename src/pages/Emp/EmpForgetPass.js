@@ -24,11 +24,10 @@ export default function EmpForgetPass() {
     setisLoading(true);
 
     await axios
-      .post("http://localhost:8000/emp/forgetpass", {
+      .post("https://grabieslive.herokuapp.com/emp/forgetpass", {
         email: values.email,
       })
       .then((res) => {
-        console.log(res);
         if (res.data.status) {
           toast.success(res.data.message);
           setEmailValue(values.email);

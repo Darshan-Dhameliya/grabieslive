@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import {
   Button,
   TextField,
@@ -13,6 +13,7 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import ErrorMesage from "../../../component/ErrorMesage";
 import { DisableAOS } from "../../../provider/DisableAmination";
+import { UserContext } from "../../../provider/UserContext";
 
 const serviceProviceLandmark = [
   "Punagam",
@@ -23,7 +24,13 @@ const serviceProviceLandmark = [
 ];
 
 export default function PersonInfo({ handleNext, setappoimentData }) {
+  const {
+    AuthDispatch,
+    AuthState: { appoiMentdata },
+  } = useContext(UserContext);
+
   const LoginData = (values) => {
+    AuthDispatch({ type: "setAppoData", item: values });
     handleNext();
     setappoimentData(values);
   };
@@ -50,10 +57,10 @@ export default function PersonInfo({ handleNext, setappoimentData }) {
           <Paper className="shadow glassy-container" sx={{ padding: "20px" }}>
             <Formik
               initialValues={{
-                Name: "",
-                Number: "",
-                Address: "",
-                landmark: "",
+                Name: appoiMentdata.Name || "",
+                Number: appoiMentdata.Number || "",
+                Address: appoiMentdata.Address || "",
+                landmark: appoiMentdata.landmark || "",
               }}
               onSubmit={LoginData}
               validationSchema={LoginSchema}

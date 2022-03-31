@@ -11,7 +11,7 @@ export default function SecondStep({
   setappoimentData,
 }) {
   const {
-    AuthState: { userData },
+    AuthState: { userData, cartData },
   } = useContext(UserContext);
   const [TimeProvider, setTimeProvider] = useState([]);
   const [markTimeIndex, setmarkTimeIndex] = useState();
@@ -24,27 +24,28 @@ export default function SecondStep({
   const SubmitTime = async () => {
     setisLoading(true);
     setDisableButton(true);
-    const cartData = JSON.parse(localStorage.getItem("cartItemData"));
-    console.log(cartData);
+    // const cartData = JSON.parse(localStorage.getItem("cartItemData"));
+    // console.log(cartData);
     const ApppoiMentObJ = {
       userid: userData._id,
-      service: cartData[0].jobtitle,
+      service: cartData.jobtitle,
       date: dateAndTime.date,
       area: appoimentData.landmark,
       time: dateAndTime.time,
     };
-    console.log(ApppoiMentObJ);
     await axios
-      .post("http://localhost:8000/user/chekempavilability", ApppoiMentObJ)
+      .post(
+        "https://grabieslive.herokuapp.com/user/chekempavilability",
+        ApppoiMentObJ
+      )
       .then((res) => {
-        console.log(res.data);
-
         if (res.data.status) {
           setappoimentData({
             ...appoimentData,
             date: dateAndTime.date,
-            service: cartData[0].jobtitle,
+            service: cartData.jobtitle,
             time: dateAndTime.time,
+            dateAndTime: dateAndTime.dateAndTime,
           });
           handleNext();
         } else {
@@ -61,69 +62,54 @@ export default function SecondStep({
     return new Date(Math.round(date.getTime() / ms) * ms);
   }
 
-  const timeProvider = () => {
+  const timeProvider = (date) => {
     const timearr = [];
-    const TimeStart = roundToNearest30(new Date());
+    const TimeStart = roundToNearest30(date);
+
     var TimeEnd = moment(TimeStart).add(30, "m").toObject();
-    while (20 > TimeEnd.hours && TimeEnd.hours > 8) {
-      timearr.push(moment(TimeEnd).format("hh:mm"));
+
+    while (20 > TimeEnd.hours && TimeEnd.hours > 7) {
+      timearr.push(TimeEnd);
       TimeEnd = moment(TimeEnd).add(30, "m").toObject();
     }
-    if (20 >= TimeEnd.hours && TimeEnd.hours > 8) {
-      timearr.push(moment(TimeEnd).format("hh:mm"));
-    }
+    setmarkTimeIndex(-1);
     setTimeProvider(timearr);
   };
 
   useEffect(() => {
-    timeProvider();
+    timeProvider(new Date());
     DateProviderFun();
   }, []);
 
   const DateProviderFun = () => {
     const datearr = [];
     var TodayDate = moment(new Date()).toObject();
-    var ThreeDayafer = moment(TodayDate).add(3, "d").toObject();
+    var ThreeDayafer = moment(TodayDate).add(2, "d").toObject();
     while (moment(TodayDate) < moment(ThreeDayafer)) {
-      datearr.push(moment(TodayDate).format("DD MMM"));
-      TodayDate = moment(TodayDate).add(1, "d").toObject();
+      datearr.push(moment(TodayDate));
+      TodayDate = moment(TodayDate)
+        .set("hour", 7)
+        .set("minute", 30)
+        .add(1, "d")
+        .toObject();
     }
     setDateProvider(datearr);
-
-    setdateAndTime({ date: datearr[0] });
   };
 
   const changeDate = (index, item) => {
     setmarkDateIndex(index);
-    setdateAndTime({ date: item });
-    if (index) {
-      setmarkTimeIndex(-1);
-      updateTimeProvider();
-    } else {
-      setmarkTimeIndex(-1);
-      timeProvider();
-    }
+    timeProvider(new Date(moment(item).toString()));
   };
 
   const changeTime = (index, item) => {
-    setdateAndTime({ ...dateAndTime, time: item });
+    const dateLocal = {
+      date: moment(item).format("DD MMM"),
+      time: moment(item).format("hh:mm"),
+      dateAndTime: moment(item).toString(),
+    };
+    setdateAndTime(dateLocal);
     setmarkTimeIndex(index);
     setDisableButton(false);
-  };
-
-  const updateTimeProvider = () => {
-    const timearr = [];
-    const TimeStart = moment(roundToNearest30(new Date()))
-      .set("hour", 7)
-      .set("minute", 30)
-      .toObject();
-    var TimeEnd = moment(TimeStart).add(30, "m").toObject();
-    while (20 > TimeEnd.hours) {
-      timearr.push(moment(TimeEnd).format("hh:mm"));
-      TimeEnd = moment(TimeEnd).add(30, "m").toObject();
-    }
-    timearr.push(moment(TimeEnd).format("hh:mm"));
-    setTimeProvider(timearr);
   };
 
   return (
@@ -139,7 +125,7 @@ export default function SecondStep({
                 className="m-2"
                 onClick={() => changeDate(index, item)}
               >
-                {item}
+                {moment(item).format("DD MMM")}
               </Button>
             ))}
           </div>
@@ -153,7 +139,7 @@ export default function SecondStep({
                   className="m-2"
                   onClick={() => changeTime(index, item)}
                 >
-                  {item}
+                  {moment(item).format("hh:mm")}
                 </Button>
               ))}
             </div>

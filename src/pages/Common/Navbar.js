@@ -11,6 +11,7 @@ import {
   Typography,
   IconButton,
   Drawer,
+  Paper,
 } from "@mui/material";
 import { ThemeContext } from "../../provider/themeContext";
 import DarkModeToggle from "react-dark-mode-toggle";
@@ -20,7 +21,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useTheme } from "@mui/styles";
 import { RiUserReceivedLine } from "react-icons/ri";
 import { UserContext } from "../../provider/UserContext";
-import { BsCart4 } from "react-icons/bs";
 
 export default function Navbar() {
   const { state, dispatch } = useContext(ThemeContext);
@@ -33,12 +33,26 @@ export default function Navbar() {
 
   const ListItemSideBar = {
     user: [
-      "Home",
-      { title: "Home", onClick: () => Navigate("/client/homepage") },
-      { title: "Booked Services", onClick: () => Navigate("/client/homepage") },
+      {
+        title: "Home",
+        onClick: () => {
+          Navigate("/client/homepage");
+          setSideDrawerWidth("0%");
+        },
+      },
+      {
+        title: "Booked Services",
+        onClick: () => {
+          Navigate("/client/bookedservice");
+          setSideDrawerWidth("0%");
+        },
+      },
       {
         title: "Completed Services",
-        onClick: () => Navigate("/client/homepage"),
+        onClick: () => {
+          Navigate("/client/completedservice");
+          setSideDrawerWidth("0%");
+        },
       },
       {
         title: "Change Password",
@@ -50,10 +64,19 @@ export default function Navbar() {
       { title: "LogOut", onClick: () => LogOut() },
     ],
     emp: [
-      { title: "Home", onClick: () => Navigate("/emp/homepage") },
+      {
+        title: "Home",
+        onClick: () => {
+          Navigate("/emp/homepage");
+          setSideDrawerWidth("0%");
+        },
+      },
       {
         title: "Completed Services",
-        onClick: () => Navigate("/client/homepage"),
+        onClick: () => {
+          Navigate("/emp/completeservice");
+          setSideDrawerWidth("0%");
+        },
       },
       {
         title: "Change Password",
@@ -64,16 +87,12 @@ export default function Navbar() {
       },
       { title: "LogOut", onClick: () => LogOut() },
     ],
-    admin: [
-      { title: "Home", onClick: () => Navigate("/client/homepage") },
-      { title: "LogOut", onClick: () => LogOut() },
-    ],
     default: [
       { title: "Home", onClick: () => Navigate("/client/homepage") },
-      { title: "Login/SignUp", onClick: () => Navigate("/client/homepage") },
+      { title: "Login/SignUp", onClick: () => Navigate("/login") },
       {
         title: "Login/Register As a professional",
-        onClick: () => Navigate("/client/homepage"),
+        onClick: () => Navigate("/emp/login"),
       },
     ],
   };
@@ -102,8 +121,8 @@ export default function Navbar() {
       <Toolbar />
       <div className="d-flex flex-column">
         <List>
-          {ListItemSideBar[AuthState.userType].map((text, index) => (
-            <ListItem button key={index}>
+          {ListItemSideBar[AuthState.userType]?.map((text, index) => (
+            <ListItem button key={index} onClick={text.onClick}>
               <ListItemText primary={text.title} />
             </ListItem>
           ))}
@@ -132,16 +151,13 @@ export default function Navbar() {
               <MenuIcon />
             </IconButton>
           </Box>
-          <Typography
-            variant="h6"
-            component="div"
+          <Paper
             className="cursor-pointer"
-            sx={{ flexGrow: 1 }}
-            onClick={() => Navigate("/client/homepage")}
+            // onClick={() => Navigate("/client/homepage")}
           >
-            <span className="logo">G</span>rabies
-            <span className="logo">L</span>ive
-          </Typography>
+            <div className="logo"></div>
+          </Paper>
+          <Box sx={{ flexGrow: 1 }}></Box>
           <Box
             sx={{
               display: {
@@ -195,17 +211,6 @@ export default function Navbar() {
               onClick={() => setSideDrawerWidth("100%")}
             />
           </Box>
-          {(AuthState.userType === "default" ||
-            AuthState.userType === "user") && (
-            <div
-              className="cursor-pointer"
-              onClick={() => Navigate("/client/homepage/cart")}
-            >
-              <Badge badgeContent={AuthState.cartData.length} color="error">
-                <BsCart4 size={32} />
-              </Badge>
-            </div>
-          )}
         </Toolbar>
       </AppBar>
       <Drawer anchor="left" open={open} onClose={() => setopen(false)}>

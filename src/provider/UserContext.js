@@ -8,8 +8,9 @@ const LocalCartData = JSON.parse(localStorage.getItem("cartItemData"));
 export const AuthStateProvider = {
   isLoggedIn: LocalData ? LocalData.isLoggedIn : false,
   userType: LocalData ? LocalData.userType : "default",
-  cartData: LocalCartData ? LocalCartData : [],
+  cartData: LocalCartData ? LocalCartData : {},
   userData: LocalData ? LocalData.userData : {},
+  appoiMentdata: {},
 };
 
 export const AuthReducer = (state = AuthStateProvider, action) => {
@@ -37,18 +38,12 @@ export const AuthReducer = (state = AuthStateProvider, action) => {
       };
 
     case "addItemCart":
-      const CartJobTitle = state.cartData.length && state.cartData[0].jobtitle;
+      localStorage.setItem("cartItemData", JSON.stringify(action.item));
 
-      if (CartJobTitle === action.item.jobtitle) {
-        return { ...state, cartData: [...state.cartData, action.item] };
-      } else {
-        return { ...state, cartData: [action.item] };
-      }
-    case "removeItemCart":
-      const afterRemove = state.cartData.filter(
-        (item, index) => index !== action.id
-      );
-      return { ...state, cartData: afterRemove };
+      return { ...state, cartData: action.item };
+
+    case "setAppoData":
+      return { ...state, appoiMentdata: action.item };
 
     default:
       return state;

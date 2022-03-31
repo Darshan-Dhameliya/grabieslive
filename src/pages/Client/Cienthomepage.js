@@ -10,7 +10,11 @@ import {
   Divider,
   CardContent,
 } from "@mui/material";
-import logo from "../../images/icons8-electrician-64.png";
+import elctrician from "../../images/elctrician.png";
+import ac from "../../images/ac.png";
+import ro from "../../images/ro.png";
+import carpenter from "../../images/carpenter.png";
+import plumber from "../../images/plumber.png";
 import { useTheme } from "@mui/styles";
 import AppRegistrationTwoToneIcon from "@mui/icons-material/AppRegistrationTwoTone";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
@@ -82,11 +86,11 @@ export default function Cienthomepage() {
   ];
 
   const [ServiceList] = useState([
-    { name: "Plumber" },
-    { name: "Electrician" },
-    { name: "Ro service & repair" },
-    { name: "Ac service & repair" },
-    { name: "Carpenter" },
+    { name: "Plumber", image: plumber },
+    { name: "Electrician", image: elctrician },
+    { name: "Ro service & repair", image: ro },
+    { name: "Ac service & repair", image: ac },
+    { name: "Carpenter", image: carpenter },
   ]);
 
   return (
@@ -119,7 +123,7 @@ export default function Cienthomepage() {
               onClick={() => Navigate(`/client/homepage/${item.name}/list`)}
             >
               <img
-                src={logo}
+                src={item.image}
                 alt="something went wrong"
                 className="img-fluid"
                 style={{ height: "64px", width: "64px" }}

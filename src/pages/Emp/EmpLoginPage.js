@@ -31,17 +31,19 @@ export default function EmpLoginPage() {
   const [isLoading, setisLoading] = useState(false);
   const [showPass, setShowpass] = useState(false);
   const LoginData = async (values, { resetForm }) => {
-    console.log(values);
     setisLoading(true);
     await axios
-      .post("http://localhost:8000/emp/login", {
+      .post("https://grabieslive.herokuapp.com/emp/login", {
         email: values.email,
         password: values.password,
       })
       .then((res) => {
-        console.log(res);
         if (res.data.status) {
-          AuthDispatch({ type: "isLoggedIn", userType: "emp" });
+          AuthDispatch({
+            type: "isLoggedIn",
+            userType: "emp",
+            userData: res.data.Data,
+          });
           toast.success(res.data.message);
           Navigate("/emp/homepage");
           resetForm();
@@ -78,7 +80,7 @@ export default function EmpLoginPage() {
         >
           <Grid item lg={6} sm={8} md={6} xs={12} data-aos="fade-right">
             <Paper className="p-5 shadow glassy-container">
-              <h1 className="text-center">Sign In</h1>
+              <h1 className="text-center">Emp Sign In</h1>
               <Paper color="primary"></Paper>
               <Formik
                 initialValues={{ email: "", password: "" }}

@@ -2,10 +2,11 @@ import React from "react";
 import EmpLoginPage from "../pages/Emp/EmpLoginPage";
 import EmpForgetPass from "../pages/Emp/EmpForgetPass";
 import EmpHomepage from "../pages/Emp/EmpHomepage";
-import EmpChangePassword from "../pages/Emp/EmpChangePassword";
+import EmpChangePassword from "../pages/Common/ChangePassword";
 import EmpSignUpPage from "../pages/Emp/EmpSignup";
 import Navbar from "../pages/Common/Navbar";
 import { Route, Navigate } from "react-router-dom";
+import CompletedSerice from "../pages/Emp/CompletedSerice";
 
 export const EmpRoute = () => {
   return (
@@ -16,6 +17,16 @@ export const EmpRoute = () => {
           <>
             <Navbar />
             <EmpForgetPass />
+          </>
+        }
+      />
+
+      <Route
+        path="emp/completeservice"
+        element={
+          <>
+            <Navbar />
+            <CompletedSerice />
           </>
         }
       />

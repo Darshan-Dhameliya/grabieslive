@@ -24,7 +24,7 @@ export default function ForgetPass() {
     setisLoading(true);
 
     await axios
-      .post("http://localhost:8000/forgetpass", {
+      .post("https://grabieslive.herokuapp.com/forgetpass", {
         email: values.email,
       })
       .then((res) => {

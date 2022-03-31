@@ -1,8 +1,8 @@
 import React from "react";
-import DashBoard from "../pages/Admin/DashBoard";
+import DashBoard from "../pages/Admin/EmpDashBoard";
 import Navbar from "../pages/Common/Navbar";
 import EmpLoginPage from "../pages/Emp/EmpLoginPage";
-import AdminHomepage from "../pages/Admin/AdminHomepage";
+import AdminHomepage from "../pages/Admin/AdminHome";
 import { Route, Navigate } from "react-router-dom";
 
 export const AdminRoute = () => {
@@ -12,7 +12,6 @@ export const AdminRoute = () => {
         path="admin/homepage"
         element={
           <>
-            <Navbar />
             <AdminHomepage />
           </>
         }
@@ -21,18 +20,15 @@ export const AdminRoute = () => {
         path="admin/homepage/dashBoard"
         element={
           <>
-            <Navbar />
             <DashBoard />
           </>
         }
       />
 
-      <Route path="/" element={<Navigate replace to="/admin/homepage" />} />
       <Route
         path="emp/login"
         element={
           <>
-            <Navbar />
             <EmpLoginPage />
           </>
         }
