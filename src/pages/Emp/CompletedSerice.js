@@ -13,7 +13,7 @@ export default function CompletedSerice() {
     const id = userData._id;
     console.log(userData._id);
     await axios
-      .post("https://grabieslive.herokuapp.com/emp/completeAppo", { id })
+      .post("http://localhost:8000/emp/completeAppo", { id })
       .then((result) => {
         setuseDemoData(result.data.data);
       })

@@ -14,6 +14,8 @@ import {
   Slide,
 } from "@mui/material";
 import CustomButton from "../../component/CustomButton";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 export default function BookedServiceList({ itemData }) {
   const [showReviwModal, setshowReviwModal] = useState(false);
@@ -22,10 +24,6 @@ export default function BookedServiceList({ itemData }) {
   const handleClose = () => {
     setshowReviwModal(false);
     setshowcomplaintModal(false);
-  };
-
-  const MArkAsDone = () => {
-    // setTaskList();
   };
 
   return (
@@ -130,14 +128,48 @@ export default function BookedServiceList({ itemData }) {
           </Button>
         </CardActions>
       </Card>
-      <ReviewModal handleClose={handleClose} open={showReviwModal} />
-      <ComplaintModal handleClose={handleClose} open={showcomplaintModal} />
+      <ReviewModal
+        handleClose={handleClose}
+        open={showReviwModal}
+        data={itemData}
+      />
+      <ComplaintModal
+        handleClose={handleClose}
+        data={itemData}
+        open={showcomplaintModal}
+      />
     </>
   );
 }
 
-const ReviewModal = ({ handleClose, open }) => {
-  const [value, setValue] = React.useState(0);
+const ReviewModal = ({ handleClose, open, data }) => {
+  const [value, setValue] = useState(0);
+  const [desc, setdesc] = useState("");
+  const [isLoading, setisLoading] = useState(false);
+
+  const SubmitData = async () => {
+    setisLoading(true);
+    const obj = {
+      desc,
+      rating: value,
+      date: new Date().toString(),
+      appoId: data._id,
+      empId: data.emp_appoint,
+      userId: data.userid,
+    };
+    console.log(obj, data);
+    await axios.post("http://localhost:8000/feedback/make", obj).then((res) => {
+      if (res.data.status) {
+        console.log(res.data.message);
+        toast.success(res.data.message);
+        setValue(0);
+      } else {
+        console.log(res.data.message);
+      }
+    });
+    handleClose();
+    setisLoading(false);
+  };
 
   const style = {
     width: 350,
@@ -159,8 +191,6 @@ const ReviewModal = ({ handleClose, open }) => {
           <Rating
             name="simple-controlled"
             value={value}
-            // size={34}
-            // style={{ justifyContent: "center" }}
             onChange={(event, newValue) => {
               setValue(newValue);
             }}
@@ -168,30 +198,59 @@ const ReviewModal = ({ handleClose, open }) => {
 
           <div className="form-group mt-3 ">
             <TextField
-              // error={touched.Address && errors.Address}
               label="Review"
               placeholder="Enter your Review"
               name="Review"
-              // value={values.Address}
               multiline
-              // onChange={handleChange}
+              onChange={(e) => setdesc(e.target.value)}
               rows={3}
               className="w-100"
             />
           </div>
-          <CustomButton label="submit" className="mt-2 w-100" />
+          <CustomButton
+            label="submit"
+            className="mt-2 w-100"
+            onClick={SubmitData}
+            isLoading={isLoading}
+          />
         </Box>
       </Slide>
     </Modal>
   );
 };
 
-const ComplaintModal = ({ handleClose, open }) => {
+const ComplaintModal = ({ handleClose, data, open }) => {
+  const [desc, setdesc] = useState("");
+  const [isLoading, setisLoading] = useState(false);
+
   const style = {
     width: 350,
     bgcolor: "background.paper",
     boxShadow: 24,
     p: 4,
+  };
+
+  const SubmitData = async () => {
+    setisLoading(true);
+    const obj = {
+      desc,
+      date: new Date().toString(),
+      appoId: data._id,
+      empId: data.emp_appoint,
+      userId: data.userid,
+    };
+    await axios
+      .post("http://localhost:8000/complaint/make", obj)
+      .then((res) => {
+        if (res.data.status) {
+          console.log(res.data.message);
+          toast.success(res.data.message);
+          handleClose();
+        } else {
+          console.log(res.data.message);
+        }
+      });
+    setisLoading(false);
   };
 
   return (
@@ -206,18 +265,21 @@ const ComplaintModal = ({ handleClose, open }) => {
         <Box sx={style} data-aos="slide-up">
           <div className="form-group mt-3 ">
             <TextField
-              // error={touched.Address && errors.Address}
               label="Complaint"
               placeholder="Enter your Complaint"
               name="Complaint"
-              // value={values.Address}
               multiline
-              // onChange={handleChange}
+              onChange={(e) => setdesc(e.target.value)}
               rows={3}
               className="w-100"
             />
           </div>
-          <CustomButton label="submit" className="mt-2 w-100" />
+          <CustomButton
+            label="submit"
+            className="mt-2 w-100"
+            isLoading={isLoading}
+            onClick={() => SubmitData()}
+          />
         </Box>
       </Slide>
     </Modal>

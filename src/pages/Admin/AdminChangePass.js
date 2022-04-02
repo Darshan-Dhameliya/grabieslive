@@ -34,7 +34,7 @@ export default function PassAuth() {
   const LoginData = async (values, { resetForm }) => {
     setisLoading(true);
     await axios
-      .post("https://grabieslive.herokuapp.com/admin/changepass", {
+      .post("http://localhost:8000/admin/changepass", {
         id: userData._id,
         old_pass: values.o_password,
         new_pass: values.c_password,

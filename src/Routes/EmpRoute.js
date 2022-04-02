@@ -36,9 +36,7 @@ export const EmpRoute = () => {
         element={
           <>
             <Navbar />
-            <div className="container">
-              <EmpHomepage />
-            </div>
+            <EmpHomepage />
           </>
         }
       />

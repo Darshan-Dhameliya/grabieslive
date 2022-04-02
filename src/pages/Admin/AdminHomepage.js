@@ -20,21 +20,19 @@ export default function AdminHomepage({ allData, setAllData, setactiveIndex }) {
   );
 
   const GetCountData = async () => {
-    await axios
-      .get("https://grabieslive.herokuapp.com/admin/totalcount")
-      .then((res) => {
-        const countdata = res.data;
+    await axios.get("http://localhost:8000/admin/totalcount").then((res) => {
+      const countdata = res.data;
 
-        localAlldata[0].totalcount = countdata.ToatalEmp;
-        localAlldata[1].totalcount = countdata.ToatalVerifiedEmp;
-        localAlldata[2].totalcount = countdata.ToatalUnVerifiedEmp;
-        localAlldata[3].totalcount = countdata.ToatalAppoiment;
-        localAlldata[4].totalcount = countdata.ToatalCompletedAppoiment;
-        localAlldata[5].totalcount = countdata.ToatalUnCompletedAppoiment;
-        localAlldata[6].totalcount = countdata.TotalUser;
+      localAlldata[0].totalcount = countdata.ToatalEmp;
+      localAlldata[1].totalcount = countdata.ToatalVerifiedEmp;
+      localAlldata[2].totalcount = countdata.ToatalUnVerifiedEmp;
+      localAlldata[3].totalcount = countdata.ToatalAppoiment;
+      localAlldata[4].totalcount = countdata.ToatalCompletedAppoiment;
+      localAlldata[5].totalcount = countdata.ToatalUnCompletedAppoiment;
+      localAlldata[6].totalcount = countdata.TotalUser;
 
-        setlocalAlldata([...localAlldata]);
-      });
+      setlocalAlldata([...localAlldata]);
+    });
   };
 
   useEffect(() => {

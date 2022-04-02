@@ -3,7 +3,6 @@ import { Route, Navigate } from "react-router-dom";
 import SignUpPage from "../pages/Common/SignUp";
 import ForgetPass from "../pages/Common/ForgetPass";
 import Navbar from "../pages/Common/Navbar";
-import CartPage from "../pages/Client/CartPage";
 import ChangePassword from "../pages/Common/ChangePassword";
 import Stepper from "../pages/Client/Stepper";
 import ServiceList from "../pages/Client/ServiceList";

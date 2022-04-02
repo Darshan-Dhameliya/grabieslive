@@ -42,7 +42,7 @@ export default function EmpSignup() {
       password: values.password,
     };
     await axios
-      .post("https://grabieslive.herokuapp.com/admin/register", Obj)
+      .post("http://localhost:8000/admin/register", Obj)
       .then((res) => {
         if (res.data.status) {
           toast.success(res.data.message);

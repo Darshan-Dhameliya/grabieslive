@@ -34,10 +34,7 @@ export default function SecondStep({
       time: dateAndTime.time,
     };
     await axios
-      .post(
-        "https://grabieslive.herokuapp.com/user/chekempavilability",
-        ApppoiMentObJ
-      )
+      .post("http://localhost:8000/user/chekempavilability", ApppoiMentObJ)
       .then((res) => {
         if (res.data.status) {
           setappoimentData({

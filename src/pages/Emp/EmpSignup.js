@@ -49,7 +49,7 @@ export default function EmpSignup() {
       password: values.password,
     };
     await axios
-      .post("https://grabieslive.herokuapp.com/emp/register", empObj)
+      .post("http://localhost:8000/emp/register", empObj)
       .then((res) => {
         if (res.data.status) {
           toast.success(res.data.message);

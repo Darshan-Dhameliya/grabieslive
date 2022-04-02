@@ -4,7 +4,6 @@ import LoginPage from "../pages/Common/LoginPage";
 import SignUpPage from "../pages/Common/SignUp";
 import ForgetPass from "../pages/Common/ForgetPass";
 import PageNotFound from "../pages/Common/PageNotFound";
-import CartPage from "../pages/Client/CartPage";
 import ServiceList from "../pages/Client/ServiceList";
 import Cienthomepage from "../pages/Client/Cienthomepage";
 import EmpForgetPass from "../pages/Emp/EmpForgetPass";
@@ -24,15 +23,7 @@ export const DefaultRoute = () => {
           </>
         }
       />
-      {/* <Route
-        path="client/homepage/cart"
-        element={
-          <>
-            <Navbar />
-            <CartPage />
-          </>
-        }
-      /> */}
+
       <Route
         path="/login"
         element={

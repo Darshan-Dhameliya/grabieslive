@@ -3,10 +3,10 @@ import { createContext } from "react";
 export const ThemeContext = createContext();
 
 export const initialState = {
-  darkMode:
-    localStorage.getItem("prefermode") === "true" ||
-    (window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches),
+  darkMode: localStorage.getItem("prefermode")
+    ? localStorage.getItem("prefermode") === "true"
+    : window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches,
   color: localStorage.getItem("prefercolor") || "#0d6efd",
 };
 

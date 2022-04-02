@@ -36,11 +36,11 @@ export default function PassAuth() {
     setisLoading(true);
     var url = "";
     if (userType === "user") {
-      url = "https://grabieslive.herokuapp.com/user/changepass";
+      url = "http://localhost:8000/user/changepass";
     } else if (userType === "emp") {
-      url = "https://grabieslive.herokuapp.com/emp/changepass";
+      url = "http://localhost:8000/emp/changepass";
     } else {
-      url = "https://grabieslive.herokuapp.com/admin/changepass";
+      url = "http://localhost:8000/admin/changepass";
     }
     await axios
       .post(url, {

@@ -16,7 +16,7 @@ export default function CompletedServide() {
     const id = userData._id;
     console.log(id);
     await axios
-      .post("https://grabieslive.herokuapp.com/user/completeAppo", { id })
+      .post("http://localhost:8000/user/completeAppo", { id })
       .then((res) => {
         if (res.data.status) {
           const data = res.data.data;
@@ -42,7 +42,7 @@ export default function CompletedServide() {
         Completed services
       </Typography>
 
-      {TaskList.length === 0 && isLoading ? (
+      {TaskList.length === 0 || isLoading ? (
         <div className="h-75 d-flex align-items-center justify-content-center">
           <Typography gutterBottom color="primary" variant="h3" component="div">
             {isLoading ? <CircularProgress color="primary" /> : "No data Found"}

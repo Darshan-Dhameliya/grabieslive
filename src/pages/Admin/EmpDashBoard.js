@@ -12,7 +12,7 @@ export default function EmpDashBoard() {
   const GetData = async () => {
     if (parmas.state) {
       await axios
-        .post(`https://grabieslive.herokuapp.com/admin/${parmas.state}`)
+        .post(`http://localhost:8000/admin/${parmas.state}`)
         .then((result) => {
           setuseDemoData(result.data.data);
         })

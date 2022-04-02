@@ -33,7 +33,7 @@ export default function LoginPage() {
   const LoginData = async (values, { resetForm }) => {
     setisLoading(true);
     await axios
-      .post("https://grabieslive.herokuapp.com/login", {
+      .post("http://localhost:8000/user/login", {
         email: values.email,
         password: values.password,
       })

@@ -30,7 +30,7 @@ export default function SignUp() {
     setisLoading(true);
 
     await axios
-      .post("https://grabieslive.herokuapp.com/signup", {
+      .post("http://localhost:8000/user/signup", {
         email: values.email,
         password: values.password,
       })

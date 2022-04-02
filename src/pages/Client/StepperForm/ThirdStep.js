@@ -32,7 +32,7 @@ export default function ThirdStep({ appoimentData, handleNext }) {
 
     console.log(ApppoiMentObJ);
     await axios
-      .post("https://grabieslive.herokuapp.com/user/appointment", ApppoiMentObJ)
+      .post("http://localhost:8000/user/appointment", ApppoiMentObJ)
       .then((res) => {
         if (res.data.status) {
           toast.success(res.data.message);

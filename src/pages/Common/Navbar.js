@@ -24,7 +24,7 @@ import { UserContext } from "../../provider/UserContext";
 
 export default function Navbar() {
   const { state, dispatch } = useContext(ThemeContext);
-  const { AuthState, AuthDispatch } = useContext(UserContext);
+  const { AuthState, userType, AuthDispatch } = useContext(UserContext);
 
   const theme = useTheme();
   let Navigate = useNavigate();
@@ -131,6 +131,18 @@ export default function Navbar() {
     </Box>
   );
 
+  const NavigateToHome = () => {
+    if (userType === "emp") {
+      Navigate("/emp/homepage");
+    } else if (userType === "admin") {
+      Navigate("/admin/homepage");
+    } else if (userType === "user") {
+      Navigate("/client/homepage");
+    } else {
+      Navigate("/client/homepage");
+    }
+  };
+
   return (
     <Box
       sx={{ flexGrow: 1 }}
@@ -151,10 +163,7 @@ export default function Navbar() {
               <MenuIcon />
             </IconButton>
           </Box>
-          <Paper
-            className="cursor-pointer"
-            // onClick={() => Navigate("/client/homepage")}
-          >
+          <Paper className="cursor-pointer" onClick={() => NavigateToHome()}>
             <div className="logo"></div>
           </Paper>
           <Box sx={{ flexGrow: 1 }}></Box>

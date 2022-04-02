@@ -27,10 +27,6 @@ export default function BookedServiceList({ itemData }) {
     setshowcomplaintModal(false);
   };
 
-  const MArkAsDone = () => {
-    // setTaskList();
-  };
-
   return (
     <>
       <Card
@@ -163,6 +159,7 @@ const ComplaintModal = ({ handleClose, open }) => {
                 value={item}
                 control={<Radio />}
                 label={item}
+                componentsProps={{ typography: { color: "textPrimary" } }}
                 onClick={() => {
                   setcancelReason(item);
                   setShowTextArea(false);
@@ -173,6 +170,8 @@ const ComplaintModal = ({ handleClose, open }) => {
               value="other"
               control={<Radio />}
               label="Other"
+              componentsProps={{ typography: { color: "textPrimary" } }}
+              color="textPrimary"
               onClick={() => setShowTextArea(true)}
             />
           </RadioGroup>

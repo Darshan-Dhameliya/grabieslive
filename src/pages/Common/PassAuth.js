@@ -37,7 +37,7 @@ export default function PassAuth(props) {
       new_pass: values.password,
     };
     await axios
-      .post("https://grabieslive.herokuapp.com/forgetpass", data)
+      .post("http://localhost:8000/user/forgetpass", data)
       .then((res) => {
         if (res.data.status) {
           toast.success(res.data.message);

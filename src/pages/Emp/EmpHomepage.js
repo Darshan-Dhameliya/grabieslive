@@ -2,19 +2,21 @@ import React, { useState, useEffect, useContext } from "react";
 import EmpHomepageList from "./EmpHomepageList";
 import axios from "axios";
 import { UserContext } from "../../provider/UserContext";
-import { Typography } from "@mui/material";
+import { CircularProgress, Typography } from "@mui/material";
 
 export default function EmpHomepage() {
   const [TaskList, setTaskList] = useState([]);
+  const [isLoading, setisLoading] = useState(false);
 
   const {
     AuthState: { userData },
   } = useContext(UserContext);
 
   const getDataService = async () => {
+    setisLoading(true);
     const id = userData._id;
     await axios
-      .post("https://grabieslive.herokuapp.com/emp/bookedAppo", { id })
+      .post("http://localhost:8000/emp/bookedAppo", { id })
       .then((res) => {
         if (res.data.status) {
           const data = res.data.data.sort(function (a, b) {
@@ -25,6 +27,7 @@ export default function EmpHomepage() {
           setTaskList(data);
         }
       });
+    setisLoading(false);
   };
 
   useEffect(() => {
@@ -32,7 +35,7 @@ export default function EmpHomepage() {
   }, []);
 
   return (
-    <div>
+    <div className="h-100 container">
       <Typography
         variant="h5"
         className="mt-3"
@@ -41,12 +44,19 @@ export default function EmpHomepage() {
       >
         Hey, {userData?.empName}
       </Typography>
-
-      <div className="d-flex flex-wrap justify-content-between">
-        {TaskList.map((item, index) => (
-          <EmpHomepageList key={index} itemData={item} />
-        ))}
-      </div>
+      {TaskList.length === 0 || isLoading ? (
+        <div className="d-flex h-75 align-items-center justify-content-center">
+          <Typography gutterBottom color="primary" variant="h3" component="div">
+            {isLoading ? <CircularProgress color="primary" /> : "No data Found"}
+          </Typography>
+        </div>
+      ) : (
+        <div className="d-flex flex-wrap justify-content-between">
+          {TaskList.map((item, index) => (
+            <EmpHomepageList key={index} itemData={item} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
